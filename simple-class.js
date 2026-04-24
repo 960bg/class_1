@@ -1,15 +1,18 @@
 class Simple {
   static #S_P_MAX_COUNT_INSTANCE = 2;
   static #S_P_COUNT_INSTANCE = 0;
-  #P_100 = 100;
-  pInit;
   static prosto = 'prosto static';
+
+  #P_100 = 100;
+
+  pInit;
+
   constructor(init) {
     if (this.constructor !== Simple) {
       // throw new Error('Наследование класса Simle запрещено.');
       console.log('Произошлло наследование класса Simple.');
     }
-    if (!Simple.#S_M_ISCREATE()) {
+    if (!Simple.#S_P_ISCREATE()) {
       throw new ReferenceError(
         `Превышен порог создания объектов для класса Simple.`
       );
@@ -20,7 +23,7 @@ class Simple {
     this.pInit = init;
   }
 
-  static #S_M_ISCREATE() {
+  static #S_P_ISCREATE() {
     return this.#S_P_MAX_COUNT_INSTANCE > this.#S_P_COUNT_INSTANCE;
   }
 
