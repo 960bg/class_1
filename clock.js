@@ -50,19 +50,6 @@ class Clock {
     this.#template = template;
   }
 
-  // get endTime() {
-  //   return this.#endTime;
-  // }
-  // get template() {
-  //   return this.#template;
-  // }
-  // get timeIsOver() {
-  //   return this.#timeIsOver;
-  // }
-  // set timeIsOver(time) {
-  //   this.#timeIsOver = time;
-  // }
-
   stop() {
     clearInterval(this.#IDtimer);
   }
@@ -111,8 +98,8 @@ class Clock {
   }
 }
 
-// const myClock = new Clock({ template: 'h:m:s', endTime: 5 });
-const myClock = new Clock({ template: 'h:m:s' });
+const myClock = new Clock({ template: 'h:m:s', endTime: 5 });
+// const myClock = new Clock({ template: 'h:m:s' });
 
 myClock.start();
 
